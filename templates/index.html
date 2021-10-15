@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block title %}Home|Portfolio{% endblock %}
+
+{% block content %}
+<h1>Im the Portfolio.</h1>
+{% for i in projects %}
+    <h2>{{ i.title }}</h2>
+    <p>{{ i.description }}</p>
+    <img src="{{ i.image.url }}" height="300px" width="300px">
+    {% if i.url %}
+        <br><a href="{{ i.url }}">Link</a>
+    {% endif %}
+    <br>
+{% endfor %}
+{% endblock %}
