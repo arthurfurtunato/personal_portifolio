@@ -3,5 +3,11 @@
 {% block title %}Blog{% endblock %}
 
 {% block content %}
-<h1>Im the Blog</h1>
+<h1>Blog</h1>
+<br>
+{% for i in blog %}
+    <h2>{{ i.title }}</h2>
+    <p>{{ i.date_post }}</p>
+    <p>{{ i.description }}</p>
+{% endfor %}
 {% endblock %}
