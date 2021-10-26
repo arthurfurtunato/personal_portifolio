@@ -4,7 +4,7 @@ from .models import Blog
 
 # Create your views here.
 def index(request):
-    blog = Blog.objects.order_by('-date_post')[:3]
+    blog = Blog.objects.order_by('-date_post')
     return render(request, 'blog/index.html', {
         'blog': blog,
     })
