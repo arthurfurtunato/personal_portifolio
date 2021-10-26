@@ -6,8 +6,6 @@
 <h1>Blog</h1>
 <br>
 {% for i in blog %}
-    <h2>{{ i.title }}</h2>
-    <p>{{ i.date_post }}</p>
-    <p>{{ i.description }}</p>
+    <a href="{{i.id}}"><h2>{{ i.title }}</h2></a>
 {% endfor %}
 {% endblock %}
