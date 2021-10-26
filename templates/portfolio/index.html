@@ -10,6 +10,7 @@
 <!-- <a href="{% static 'portifolio/my_archive.pdf' %}">Resume</a>  se vc quiser um pdf no site-->
 
 <img src="{% static 'portifolio/ney.webp' %}" style="width: 400px; height: 400px;">
+<a href="{% url 'blog:index' %}">Blogs</a>
 {% for i in projects %}
     <h2>{{ i.title }}</h2>
     <p>{{ i.description }}</p>
@@ -19,6 +20,4 @@
     {% endif %}
     <br>
 {% endfor %}
-
-<a href="/blog/">Go to Blog</a>
 {% endblock %}
