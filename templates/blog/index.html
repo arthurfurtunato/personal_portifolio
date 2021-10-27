@@ -4,15 +4,17 @@
 
 
 {% block content %}
-
+<div style="padding: 0px 60px;">
 <h1>Blog</h1>
 
 <h2>Arthur has written {{ blog.count }} blog{{ blog.count|pluralize }}</h2>
 
 <br>
-{% for i in blog %}
-    <a href="{{i.id}}"><h2>{{ i.title }}</h2></a>
-    <h5>{{ i.date_post|date:'M d Y'|upper}}</h5>
-    <p>{{ i.description|truncatechars:50 }}</p>
-{% endfor %}
+
+    {% for i in blog %}
+        <a href="{{i.id}}"><h2>{{ i.title }}</h2></a>
+        <h5>{{ i.date_post|date:'M d Y'|upper}}</h5>
+        <p>{{ i.description|truncatechars:200 }}</p>
+    {% endfor %}
+</div>
 {% endblock %}

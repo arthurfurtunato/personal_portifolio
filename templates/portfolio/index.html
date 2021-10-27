@@ -3,20 +3,26 @@
 {% block title %}Home|Portfolio{% endblock %}
 
 {% block content %}
-<h1>Im the Portfolio.</h1>
 {% load static %}
 
 <!-- <a href="{% static 'portifolio/my_archive.pdf' %}">Resume</a>  se vc quiser um pdf no site-->
-
-<img src="{% static 'portifolio/ney.webp' %}" style="width: 400px; height: 400px;">
-<a href="{% url 'blog:index' %}">Blogs</a>
-{% for i in projects %}
-    <h2>{{ i.title }}</h2>
-    <p>{{ i.description }}</p>
-    <img src="{{ i.image.url }}" height="300px" width="300px">
-    {% if i.url %}
-        <br><a href="{{ i.url }}">Link</a>
-    {% endif %}
-    <br>
-{% endfor %}
+<div class="text-center">
+    <h1>Arthur's Portfolio.</h1>
+    <img class="rounded" src="{% static 'portifolio/ney.webp' %}" style="padding-bottom: 30px;width: 400px; height: 400px;"><hr>
+</div>
+<h1 class="pb-4">Portfolio</h1>
+<div style="display: flex;">
+    {% for i in projects %}
+    <div style="padding: 0px 100px 100px 0px; display: block;">
+        <h2>{{ i.title }}</h2>
+        <p>{{ i.description }}</p>
+        {% if i.url %}
+            <a href="{{ i.url }}"><img src="{{ i.image.url }}" height="300px" width="300px"></a>
+        {% else %}
+            <img src="{{ i.image.url }}" height="300px" width="300px">
+        {% endif %}
+        <br>
+    </div>
+    {% endfor %}
+</div>
 {% endblock %}
